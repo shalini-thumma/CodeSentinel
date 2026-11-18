@@ -1,4 +1,8 @@
+
 {
+  "title": "CodeSentinel",
+  "description": "An AI-powered, architecture-agnostic code auditing agent that analyzes public GitHub repositories to detect security vulnerabilities, code quality issues, duplicated code, incomplete implementations, and maintainability gaps using static analysis and optional AI-assisted review.",
+  "track": "AI Triage",
   "github_url": "https://github.com/shalini-thumma/CodeSentinel",
   "demo_url": "",
   "apk_url": ""
