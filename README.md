@@ -11,7 +11,6 @@ A repository can contain risky patterns, incomplete work, or avoidable maintenan
 CodeSentinel uses independent static scanners that emit a shared finding model. Static analysis works without an API key. An optional OpenAI-compatible reviewer can refine explanations and connect overlapping findings, but it cannot add findings or alter their severity. Findings are signals to verify, not proof of exploitability.
 
 ## Architecture
-## Architecture
 
 ```mermaid
 flowchart TD
