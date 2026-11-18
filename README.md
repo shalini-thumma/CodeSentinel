@@ -11,27 +11,31 @@ A repository can contain risky patterns, incomplete work, or avoidable maintenan
 CodeSentinel uses independent static scanners that emit a shared finding model. Static analysis works without an API key. An optional OpenAI-compatible reviewer can refine explanations and connect overlapping findings, but it cannot add findings or alter their severity. Findings are signals to verify, not proof of exploitability.
 
 ## Architecture
+## Architecture
 
 ```mermaid
-flowchart LR
-    U[User] --> UI[Streamlit dashboard]
-    UI --> API[FastAPI]
-    API --> GH[GitHub intake]
-    GH --> META[GitHub repository metadata]
-    GH --> ZIP[Bounded ZIP download]
-    ZIP --> SAFE[In-memory safe source selection]
-    SAFE --> INV[Language and project inventory]
-    INV --> SEC[Security scanner]
-    INV --> SLOP[Code quality scanner]
-    INV --> GAP[Gap detector]
-    INV --> LOOSE[Loose-end detector]
-    SEC --> MERGE[Shared findings]
-    SLOP --> MERGE
-    GAP --> MERGE
-    LOOSE --> MERGE
-    MERGE --> AI[Optional redacted AI review]
-    AI --> REPORT[JSON and escaped HTML reports]
-    REPORT --> UI
+flowchart TD
+    A["User"] --> B["Streamlit Dashboard"]
+    B --> C["FastAPI Backend"]
+    C --> D["GitHub Repository Intake"]
+    D --> E["Repository Metadata"]
+    D --> F["Bounded ZIP Download"]
+    F --> G["Safe Source Selection"]
+    G --> H["Language and Project Inventory"]
+
+    H --> I["Security Scanner"]
+    H --> J["Code Quality Scanner"]
+    H --> K["Gap Detector"]
+    H --> L["Loose-End Detector"]
+
+    I --> M["Shared Findings"]
+    J --> M
+    K --> M
+    L --> M
+
+    M --> N["Optional Redacted AI Review"]
+    N --> O["JSON and Escaped HTML Reports"]
+    O --> B
 ```
 
 ### Modules
