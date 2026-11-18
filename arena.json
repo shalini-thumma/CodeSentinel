@@ -1,0 +1,19 @@
+{
+  "title": "CodeSentinel",
+  "description": "Architecture-agnostic code auditing for public GitHub repositories. CodeSentinel identifies potential security vulnerabilities, code quality issues, unfinished implementations, and maintenance loose ends using static analysis and optional AI-assisted review.",
+  "github_url": "https://github.com/shalini-thumma/CodeSentinel",
+  "demo_url": "",
+  "apk_url": "",
+  "api_url": "",
+  "technologies": [
+    "Python",
+    "FastAPI",
+    "Streamlit",
+    "Pydantic",
+    "Bandit",
+    "GitHub",
+    "JSON",
+    "HTML"
+  ],
+  "public": true
+}
