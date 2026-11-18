@@ -1,0 +1,11 @@
+rules:
+  - id: codesentinel-python-eval
+    languages: [python]
+    severity: ERROR
+    message: Potential code execution through eval. Confirm the argument is not influenced by external input.
+    pattern: eval(...)
+  - id: codesentinel-python-system
+    languages: [python]
+    severity: ERROR
+    message: Potential shell command execution through os.system.
+    pattern: os.system(...)

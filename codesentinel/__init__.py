@@ -1,0 +1,1 @@
+"""CodeSentinel source-code auditing package."""
